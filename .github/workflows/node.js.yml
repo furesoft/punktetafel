@@ -21,12 +21,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install -g @angular/cli@17
-    - run: ng build --prod
+    - run: |
+        cd Punktetafel
+        ng build
 
     - name: Deploy to Github Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -34,7 +36,7 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE_BRANCH: main # The branch the action should deploy from.
         BRANCH: gh-pages-from-actions # The branch the action should deploy to.
-        FOLDER: /
+        FOLDER: /dist/Punktetafel
         SINGLE_COMMIT: true
         
           
