@@ -12,7 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    defaults:
+          run:
+            working-directory: ./Punktetafel/
     strategy:
       matrix:
         node-version: [18.x]
@@ -21,14 +23,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Change Dir
-      run: cd Punktetafel
-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: './Punktetafel/package-lock.json'
+
     - run: npm install -g @angular/cli@17
     - run: ng build
 
