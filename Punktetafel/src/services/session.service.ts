@@ -33,7 +33,7 @@ export class SessionService {
     localStorage.setItem('session', serialized);
   }
 
-  getQuizById(id: number): Quiz | undefined {
+  getQuizById(id: string): Quiz | undefined {
     return this.quizzes.find(q => q.id == id);
   }
 }

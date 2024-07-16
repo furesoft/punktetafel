@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { PlayComponent } from './play/play.component';
 import { NewQuizModalComponent } from './modals/new-quiz.modal/new-quiz.modal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NewQuizModalComponent } from './modals/new-quiz.modal/new-quiz.modal.co
   imports: [
     BrowserModule,
     NgbModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

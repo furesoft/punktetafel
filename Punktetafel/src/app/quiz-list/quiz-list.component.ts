@@ -17,5 +17,10 @@ export class QuizListComponent {
       centered: true, backdrop: 'static', size: "l"
     });
 
+    modal.result.then(q => {
+      this.session.quizzes.push(q);
+      
+      this.session.save();
+    });
   }
 }

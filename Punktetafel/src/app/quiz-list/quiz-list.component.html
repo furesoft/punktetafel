@@ -6,7 +6,7 @@
     <div class="row g-3">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let quiz of session.quizzes">
             <div class="card" style="width: 100%; position: relative;">
-                <button (click)="game.delete(quiz)" class="btn-close" style="position: absolute; top: 10px; right: 10px;"></button>
+                <button (click)="game.delete(quiz)" class="btn-close" style="position: absolute; top: 10px; right: 10px;" ngbTooltip="Delete"></button>
                 
                 <div class="card-body">
                     <h5 class="card-title">{{ quiz.title }}</h5>

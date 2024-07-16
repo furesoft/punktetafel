@@ -15,7 +15,7 @@ export class PlayComponent {
 
   constructor(public game: GameService, route: ActivatedRoute, session: SessionService) {
     route.params.subscribe(p => {
-      this.selectedQuiz = session.getQuizById(+p["id"]);
+      this.selectedQuiz = session.getQuizById(p["id"]);
     })
   }
 }
