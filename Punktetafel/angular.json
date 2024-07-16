@@ -8,13 +8,16 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "standalone": false
+          "standalone": false,
+          "skipTests": true
         },
         "@schematics/angular:directive": {
-          "standalone": false
+          "standalone": false,
+          "skipTests": true
         },
         "@schematics/angular:pipe": {
-          "standalone": false
+          "standalone": false,
+          "skipTests": true
         }
       },
       "root": "",
@@ -103,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e99bd608-fb1f-44dc-bd22-ca174ae223b2"
   }
 }

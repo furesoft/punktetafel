@@ -1,0 +1,9 @@
+<h3>{{ selectedQuiz?.title }}</h3>
+
+<table>
+    <tbody>
+        <div class="card" *ngFor="let question of selectedQuiz?.questions">
+            <p>{{ question.points }}</p>
+        </div>
+    </tbody>
+</table>

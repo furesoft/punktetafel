@@ -5,13 +5,13 @@ import { Quiz } from '../models/quiz.model';
   providedIn: 'root'
 })
 export class SessionService {
-
   public quizzes: Quiz[] = [];
 
   constructor()
   {
     this.quizzes = [
       {
+        id: 0,
         title: "Test",
         questions: [
           {
@@ -43,5 +43,9 @@ export class SessionService {
   {
     let serialized = JSON.stringify(this);
     localStorage.setItem('session', serialized);
+  }
+
+  getQuizById(id: number): Quiz | undefined {
+    return this.quizzes.find(q => q.id == id);
   }
 }
