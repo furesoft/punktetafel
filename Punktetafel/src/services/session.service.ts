@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Quiz } from '../models/quiz.model';
+import { Game } from '../models/game.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SessionService {
   public quizzes: Quiz[] = [];
+  public activeGames: Game[] = []
 
   constructor()
   {
@@ -23,6 +25,19 @@ export class SessionService {
       }
     ]
 
+    this.activeGames = [
+      {
+        quizID: 0,
+        inactiveQuestions: [],
+        player: [
+          {
+            name: "Player 1",
+            points: 0
+          }
+        ]
+      }
+    ]
+
     this.save();
 
     this.load();
@@ -35,7 +50,9 @@ export class SessionService {
     if (session)
     {
       let deserialized = <SessionService>JSON.parse(session);
+
       this.quizzes = deserialized.quizzes;
+      this.activeGames = deserialized.activeGames;
     }
   }
 
