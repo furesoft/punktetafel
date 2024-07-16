@@ -4,10 +4,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuizListComponent
   ],
   imports: [
     BrowserModule,
