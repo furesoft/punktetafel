@@ -11,41 +11,12 @@ export class SessionService {
 
   constructor()
   {
-    this.quizzes = [
-      {
-        id: 0,
-        title: "Test",
-        questions: [
-          {
-            title: "Test Title",
-            content: "What is right?",
-            points: 100
-          }
-        ]
-      }
-    ]
-
-    this.activeGames = [
-      {
-        quizID: 0,
-        inactiveQuestions: [],
-        player: [
-          {
-            name: "Player 1",
-            points: 0
-          }
-        ]
-      }
-    ]
-
-    this.save();
-
     this.load();
   }
 
   load()
   {
-    let session = localStorage.getItem('quizzes');
+    let session = localStorage.getItem('session');
 
     if (session)
     {
