@@ -41,7 +41,7 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE_BRANCH: main # The branch the action should deploy from.
         BRANCH: gh-pages-from-actions # The branch the action should deploy to.
-        FOLDER: ./dist/Punktetafel
+        FOLDER: ./Punktetafel/dist/punktetafel
         SINGLE_COMMIT: true
         
           
