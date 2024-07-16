@@ -31,7 +31,9 @@ jobs:
         cache-dependency-path: './Punktetafel/package-lock.json'
 
     - run: npm install -g @angular/cli@17
-    - run: ng build
+    - run: |
+        npm i
+        ng build
 
     - name: Deploy to Github Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
