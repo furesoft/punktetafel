@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group">
-            <input class="form-control" type="text" [id]="'category-' + i" [name]="'category-' + i" *ngFor="let cat of categories; let i = index" [(ngModel)]="quiz.categories[i]" />
+            <input class="form-control mb-2" type="text" [id]="'category-' + i" [name]="'category-' + i" *ngFor="let cat of quiz.categories; let i = index" [(ngModel)]="quiz.categories[i]" />
         </div>
     </form>
 </div>

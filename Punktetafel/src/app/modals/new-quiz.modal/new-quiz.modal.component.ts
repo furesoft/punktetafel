@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Quiz } from '../../../models/quiz.model';
 import  * as short from "short-uuid";
-import { Category } from '../../../models/category.model';
 
 @Component({
   selector: 'app-new-quiz',
@@ -17,7 +16,6 @@ export class NewQuizModalComponent {
     categories: [],
   };
   newQuiz: boolean = true;
-  categories: Category[] = [];
 
   constructor(public activeModal: NgbActiveModal) {}
 
@@ -26,6 +24,6 @@ export class NewQuizModalComponent {
   }
 
   addCategory() {
-    this.categories.push({name: ""});
+    this.quiz.categories.push({name: ""});
   }
 }
