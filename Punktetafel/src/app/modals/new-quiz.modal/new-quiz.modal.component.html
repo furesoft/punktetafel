@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h4 class="modal-title">Edit/New Quiz</h4>
+    <h4 class="modal-title">{{newQuiz ? "New" : "Edit"}} Quiz</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
 </div>
 
@@ -11,5 +11,5 @@
 </div>
 
 <div class="modal-footer">
-    <button type="button" class="btn btn-primary" (click)="submit()">OK</button>
+    <button type="button" class="btn btn-primary" (click)="submit()">{{newQuiz ? "Create" : "Update"}}</button>
 </div>

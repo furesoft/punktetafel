@@ -14,6 +14,7 @@ export class NewQuizModalComponent {
     title: "",
     questions: []    
   };
+  newQuiz: boolean = true;
 
   constructor(public activeModal: NgbActiveModal) {}
 

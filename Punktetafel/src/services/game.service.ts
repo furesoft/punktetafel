@@ -18,20 +18,26 @@ export class GameService {
       inactiveQuestions: []
     })
     this.session.save();
-    console.log(this.session.activeGames)
 
-    window.open(location.href + "play/" + quiz.id, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=4000,height=4000");
+    window.open(location.href + "play/" + quiz.id, "_blank", "toolbar=no,scrollbars=no,resizable=no,top=500,left=500,width=4000,height=4000");
   }
 
   edit(quiz: Quiz) {
     let modalRef = this.modalService.open(NewQuizModalComponent, { backdrop: 'static', size: 'l' });
     let modal = <NewQuizModalComponent>modalRef.componentInstance;
+    
     modal.quiz = quiz;
+    modal.newQuiz = false;
   }
 
   delete(quiz: Quiz) {
     this.session.quizzes.splice(this.session.quizzes.findIndex(x => x.id == quiz.id), 1);
 
+    this.reset(quiz);
+  }
+
+  reset(quiz: Quiz)
+  {
     let gameIndex = this.session.activeGames.findIndex(x => x.quizID == quiz.id);
 
     if (gameIndex != -1) {

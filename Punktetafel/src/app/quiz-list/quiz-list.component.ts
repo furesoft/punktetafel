@@ -13,11 +13,11 @@ export class QuizListComponent {
   constructor(public session: SessionService, public game: GameService, private modalService: NgbModal) { }
 
   newQuiz() {
-    let modal = this.modalService.open(NewQuizModalComponent, {
+    let modalRef = this.modalService.open(NewQuizModalComponent, {
       centered: true, backdrop: 'static', size: "l"
     });
 
-    modal.result.then(q => {
+    modalRef.result.then(q => {
       this.session.quizzes.push(q);
       
       this.session.save();
