@@ -13,7 +13,7 @@
                     <p class="card-text">{{ quiz.questions.length }} Questions</p>
                     <div class="btn-group">
                         <a (click)="game.edit(quiz)" class="btn btn-primary">Edit</a>
-                        <a (click)="game.play(quiz)" class="btn btn-success"> {{ game.isGameActive(quiz) ? "Resume" : "Play" }}</a>
+                        <a (click)="game.playOrResume(quiz)" class="btn btn-success"> {{ game.isGameActive(quiz) ? "Resume" : "Play" }}</a>
                         <a (click)="game.reset(quiz)" class="btn btn-danger" *ngIf="game.isGameActive(quiz)">Reset</a>
                     </div>
                 </div>

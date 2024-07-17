@@ -3,6 +3,7 @@ import { GameService } from '../../services/game.service';
 import { Quiz } from '../../models/quiz.model';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { SessionService } from '../../services/session.service';
+import { Game } from '../../models/game.model';
 
 @Component({
   selector: 'app-play',
@@ -12,10 +13,12 @@ import { SessionService } from '../../services/session.service';
 export class PlayComponent {
 
   selectedQuiz: Quiz | undefined;
+  activeGame!: Game | undefined;
 
   constructor(public game: GameService, route: ActivatedRoute, session: SessionService) {
     route.params.subscribe(p => {
       this.selectedQuiz = session.getQuizById(p["id"]);
+      this.activeGame = session.getGameFor(this.selectedQuiz);
     })
   }
 }

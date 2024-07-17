@@ -11,13 +11,19 @@ export class GameService {
 
   constructor(private session: SessionService, private modalService: NgbModal) { }
 
-  play(quiz: Quiz) {
-    this.session.activeGames.push({
-      quizID: quiz.id,
-      player: [],
-      inactiveQuestions: []
-    })
-    this.session.save();
+  playOrResume(quiz: Quiz) {
+    let game = this.session.getGameFor(quiz);
+
+    if (!game)
+    {
+      this.session.activeGames.push({
+        quizID: quiz.id,
+        player: [],
+        inactiveQuestions: []
+      })
+
+      this.session.save();
+    }
 
     window.open(location.href + "play/" + quiz.id, "_blank", "toolbar=no,scrollbars=no,resizable=no,top=500,left=500,width=4000,height=4000");
   }

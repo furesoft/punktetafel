@@ -36,4 +36,10 @@ export class SessionService {
   getQuizById(id: string): Quiz | undefined {
     return this.quizzes.find(q => q.id == id);
   }
+
+  getGameFor(quiz: Quiz | undefined): Game | undefined {
+    if (!quiz) return;
+
+    return this.activeGames.find(g => g.quizID == quiz.id);
+  }
 }
