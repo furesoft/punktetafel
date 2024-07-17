@@ -12,7 +12,8 @@ export class NewQuizModalComponent {
   quiz: Quiz = {
     id: short.generate().substring(0, 6),
     title: "",
-    questions: []    
+    questions: [],
+    categories: []
   };
   newQuiz: boolean = true;
 
@@ -21,5 +22,10 @@ export class NewQuizModalComponent {
   submit()
   {
     this.activeModal.close(this.quiz);
+  }
+
+  addCategory()
+  {
+    this.quiz.categories.push("");
   }
 }

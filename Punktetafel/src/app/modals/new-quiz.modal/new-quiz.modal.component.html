@@ -8,6 +8,15 @@
         <label for="name">Name</label>
         <input type="text" name="name" id="name" class="form-control" [(ngModel)]="quiz.title">
     </div>
+
+    <div class="form-group">
+        <label for="categories">Categories</label>
+        <button class="btn" ngbTooltip="New Categorie" (click)="addCategory()"><i class="bi bi-plus-circle"></i></button>
+    </div>
+
+    <div class="form-group">
+        <input type="text" [id]="i" *ngFor="let cat of quiz.categories; let i = index" [(ngModel)]="quiz.categories[i]" />
+    </div>
 </div>
 
 <div class="modal-footer">
