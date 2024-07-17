@@ -8,13 +8,15 @@ import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { PlayComponent } from './play/play.component';
 import { NewQuizModalComponent } from './modals/new-quiz.modal/new-quiz.modal.component';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizListComponent,
     PlayComponent,
-    NewQuizModalComponent
+    NewQuizModalComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
